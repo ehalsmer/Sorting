@@ -16,11 +16,15 @@ def selection_sort( arr ):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort( arr ):
-    for i in range(1, len(arr) - 1):
-        print(i)
-        if arr[i] < arr[i - 1]:
-            # swap:
-            print(i, i-1)
+    for i in range(0, len(arr) - 1):
+        # swaps = 0
+        for j in range(1, len(arr) - i):
+            if arr[j] < arr[j - 1]:
+                # swap:
+                temp = arr[j]
+                arr[j] = arr[j-1]
+                arr[j-1] = temp
+                # swaps +=1
     return arr
 
 print(bubble_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
