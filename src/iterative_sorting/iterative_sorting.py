@@ -2,14 +2,21 @@
 def selection_sort( arr ):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
-        cur_index = i
-        print('cur_index', cur_index)
-        smallest_index = cur_index
-        print('smallest_index', smallest_index)
+        # Find min of unsorted subarray
+        current_min = min(arr[i:])
+        # Do the swap
+        minFound = arr.index(current_min)
+        temp = arr[i]
+        arr[i] = current_min
+        arr[minFound] = temp
+        print(arr)
+        # cur_index = i
+        # print('cur_index', cur_index)
+        # smallest_index = cur_index
+
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc) 
-        next_smallest_element = min(arr[smallest_index:])
-        print('next smallest', next_smallest_element)
+
 
 
 
