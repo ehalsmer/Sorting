@@ -1,4 +1,4 @@
-# TO-DO: complete the helpe function below to merge 2 sorted arrays
+# TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge( arrA, arrB ):
     # elements = len( arrA ) + len( arrB )
     merged_arr = []
@@ -28,24 +28,23 @@ def merge( arrA, arrB ):
 
     return merged_arr
 
-# print(merge([7],[]))
+# print(merge([1,2,5,7],[4,7,8]))
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
-arr_split = []
 def merge_sort( arr ):
-    if len(arr) > 1:
-        middle = int(len(arr)/2)
+    print(arr)
+    if len(arr) != 1:
+        middle = len(arr)//2
         leftArr = arr[0:middle]
         rightArr = arr[middle:]
-        # merged = merge(leftArr, rightArr)
-        merge_sort(leftArr)
-        merge_sort(rightArr)
-    if len(arr) == 1:
-        arr_split.append(arr)
-    print(arr_split)
+        # the merge function below only starts once len(leftArr) = 1 and len(rightArr) = 1
+        arr = merge(merge_sort(leftArr),merge_sort(rightArr))
+        print('merge: ',arr)
+    return arr
 
-print(merge_sort([3,7,2,11,7,5,21]))
+
+# print(merge_sort([3,7,2,11,7,5,21]))
 
 # STRETCH: implement an in-place merge sort algorithm
 def merge_in_place(arr, start, mid, end):
