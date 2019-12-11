@@ -32,15 +32,18 @@ def merge( arrA, arrB ):
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
+arr_split = []
 def merge_sort( arr ):
     if len(arr) > 1:
         middle = int(len(arr)/2)
         leftArr = arr[0:middle]
         rightArr = arr[middle:]
+        # merged = merge(leftArr, rightArr)
         merge_sort(leftArr)
         merge_sort(rightArr)
-    merged = merge(leftArr, rightArr)
-    return merged
+    if len(arr) == 1:
+        arr_split.append(arr)
+    print(arr_split)
 
 print(merge_sort([3,7,2,11,7,5,21]))
 
